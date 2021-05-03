@@ -1,6 +1,6 @@
 [![View Vehicle braking to a stop on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/90820-vehicle-braking-to-a-stop)
 # Vehicle braking to a stop
-Animation of a road vehicle braking to a stop with position, speed, acceleration and braking force plots.
+Simulation and animation of a road vehicle braking to a stop with position, speed, acceleration and braking force plots.
 
 Watch animation on YouTube: https://youtu.be/xR6qlj5nh48
 
