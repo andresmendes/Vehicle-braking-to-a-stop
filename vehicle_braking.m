@@ -72,11 +72,14 @@ end
 %% Animation
 
 figure
-set(gcf,'Position',[270   140   640     360  ])
+set(gcf,'Position',[50 50 1280 720]) % YouTube: 720p
+% set(gcf,'Position',[50 50 854 480]) % YouTube: 480p
+% set(gcf,'Position',[50 50 640 640]) % Social
 
 % Create and open video writer object
-v = VideoWriter('braking_dynamics.avi');
+v = VideoWriter('braking_dynamics.mp4','MPEG-4');
 v.Quality = 100;
+v.FrameRate = fR;
 open(v);
 
 for i=1:length(TOUT)
@@ -141,6 +144,17 @@ for i=1:length(TOUT)
     frame = getframe(gcf);
     writeVideo(v,frame);
 end 
+
+% Additional frames repeating the last frame
+% Parameters
+tf_add      = 5;                    % Final time                        [s]
+fR_add      = 30;                   % Frame rate                        [fps]
+dt_add      = 1/fR;                 % Time resolution                   [s]
+time_add    = linspace(0,tf_add,tf_add*fR_add); % Time                  [s]
+for i=1:length(time_add)
+    frame = getframe(gcf);
+    writeVideo(v,frame);
+end
 
 close(v);
 
